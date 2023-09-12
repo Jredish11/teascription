@@ -66,7 +66,7 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
           price: 29.99,
           status: 'active',
           frequency: 'monthly',
-          tea_id: tea.id
+          
         }
         post '/api/v1/subscriptions', params: { subscription: invalid_attrs }
         expect(response).to_not be_successful
