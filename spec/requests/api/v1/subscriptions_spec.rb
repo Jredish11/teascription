@@ -5,6 +5,7 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
     let!(:customer) {create(:customer)}
     let!(:tea) {create(:tea)}
     
+    
     describe "POST /api/v1/subscriptions" do
       it "creates a new subscription" do
         attrs = {
@@ -71,6 +72,18 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         post '/api/v1/subscriptions', params: { subscription: invalid_attrs }
         expect(response).to_not be_successful
         expect(response.status).to eq(422)
+      end
+    end
+
+    describe "DELETE /api/v1/subscriptions/:id" do
+      it "deletes a subscription" do
+        subscription = create(:subscription, customer_id: customer.id, tea_id: tea.id) 
+        
+        delete "/api/v1/subscriptions/#{subscription.id}"
+
+        expect(response).to be_successful
+        data = JSON.parse(response.body, symbolize_names: true)
+        require 'pry'; binding.pry
       end
     end
   end
