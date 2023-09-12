@@ -16,11 +16,12 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
           tea_id: tea.id
         }
 
-        post "/api/v1/subscriptions", params: attrs
+        post "/api/v1/subscriptions", params: { subscription: attrs }
         sub_data = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
         expect(response.status).to eq(200)
+        require 'pry'; binding.pry
       end
     end
   end
