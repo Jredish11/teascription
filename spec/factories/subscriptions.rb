@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :subscription do
-    title { "MyString" }
-    price { 1.5 }
-    status { "MyString" }
-    frequency { 1 }
-    customer { nil }
+    customer
+    tea
+    title { Faker::Subscription.plan }
+    price { Faker::Number.decimal(l_digits: 2) }
+    status { Faker::Subscription.status }
+    frequency { Faker::Subscription.subscription_term }
   end
 end
