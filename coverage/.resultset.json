@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/subscription.rb": {
+      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/customer.rb": {
         "lines": [
           1,
           1,
@@ -16,7 +16,7 @@
           null
         ]
       },
-      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/customer.rb": {
+      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/subscription.rb": {
         "lines": [
           1,
           1,
@@ -84,6 +84,6 @@
         }
       }
     },
-    "timestamp": 1694539380
+    "timestamp": 1694542044
   }
 }
