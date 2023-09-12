@@ -60,7 +60,7 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
     end
     
     describe "sad path" do
-      it 'returns 422 with invalid attributes if customer does not exist' do
+      it 'returns 422 with invalid attributes if customer and/or tea does not exist' do
         invalid_attrs = {
           title: 'Earl Grey',
           price: 29.99,
