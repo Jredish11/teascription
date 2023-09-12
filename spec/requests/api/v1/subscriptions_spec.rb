@@ -58,5 +58,20 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         expect(sub_data[:data][:attributes][:tea_id]).to be_an(Integer)
       end
     end
+    
+    describe "sad path" do
+      it 'returns 422 with invalid attributes if customer does not exist' do
+        invalid_attrs = {
+          title: 'Earl Grey',
+          price: 29.99,
+          status: 'active',
+          frequency: 'monthly',
+          tea_id: tea.id
+        }
+        post '/api/v1/subscriptions', params: { subscription: invalid_attrs }
+        expect(response).to_not be_successful
+        expect(response.status).to eq(422)
+      end
+    end
   end
 end
