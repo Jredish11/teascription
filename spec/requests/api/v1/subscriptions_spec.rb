@@ -21,7 +21,41 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(response).to be_successful
         expect(response.status).to eq(200)
-        require 'pry'; binding.pry
+
+        expect(sub_data).to be_a(Hash)
+        expect(sub_data).to have_key(:data)
+
+        expect(sub_data[:data]).to be_a(Hash)
+        
+        expect(sub_data[:data]).to have_key(:id)
+        expect(sub_data[:data][:id]).to be_a(String)
+  
+        expect(sub_data[:data]).to have_key(:type)
+        expect(sub_data[:data][:type]).to be_a(String)
+
+        expect(sub_data[:data]).to have_key(:attributes)
+        expect(sub_data[:data][:attributes]).to be_a(Hash)
+
+        expect(sub_data[:data][:attributes]).to have_key(:id)
+        expect(sub_data[:data][:attributes][:id]).to be_an(Integer)
+
+        expect(sub_data[:data][:attributes]).to have_key(:title)
+        expect(sub_data[:data][:attributes][:title]).to be_a(String)
+
+        expect(sub_data[:data][:attributes]).to have_key(:price)
+        expect(sub_data[:data][:attributes][:price]).to be_a(Float)
+
+        expect(sub_data[:data][:attributes]).to have_key(:status)
+        expect(sub_data[:data][:attributes][:status]).to be_a(String)
+
+        expect(sub_data[:data][:attributes]).to have_key(:frequency)
+        expect(sub_data[:data][:attributes][:frequency]).to be_a(String)
+
+        expect(sub_data[:data][:attributes]).to have_key(:customer_id)
+        expect(sub_data[:data][:attributes][:customer_id]).to be_an(Integer)
+
+        expect(sub_data[:data][:attributes]).to have_key(:tea_id)
+        expect(sub_data[:data][:attributes][:tea_id]).to be_an(Integer)
       end
     end
   end
