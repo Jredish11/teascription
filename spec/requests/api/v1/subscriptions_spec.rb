@@ -77,13 +77,15 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
     describe "DELETE /api/v1/subscriptions/:id" do
       it "deletes a subscription" do
-        subscription = create(:subscription, customer_id: customer.id, tea_id: tea.id) 
+        subscription = create(:subscription)
         
         delete "/api/v1/subscriptions/#{subscription.id}"
 
         expect(response).to be_successful
         data = JSON.parse(response.body, symbolize_names: true)
-        require 'pry'; binding.pry
+        expect(data).to be_a(Hash)
+        expect(data).to have_key(:message)
+        expect(data[:message]).to eq("Subscription successfully deleted")
       end
     end
   end
