@@ -88,5 +88,52 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         expect(data[:message]).to eq("Subscription successfully deleted")
       end
     end
+
+    describe "INDEX /api/v1/subscriptions" do
+      it "returns all subscriptions" do
+        list = create_list(:subscription, 3)
+
+        get "/api/v1/subscriptions" 
+
+        sub_data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to be_successful
+        expect(response.status).to eq(200)
+
+        sub_data.map do |sub|
+        expect(sub).to be_a(Hash)
+        
+        expect(sub).to have_key(:id)
+        expect(sub[:id]).to be_a(Integer)
+
+        expect(sub).to have_key(:title)
+        expect(sub[:title]).to be_a(String)
+
+        expect(sub).to have_key(:price)
+        expect(sub[:price]).to be_a(Float)
+
+        expect(sub).to have_key(:status)
+        expect(sub[:status]).to be_a(String)
+
+        expect(sub).to have_key(:frequency)
+        expect(sub[:frequency]).to be_a(String)
+
+        expect(sub).to have_key(:customer_id)
+        expect(sub[:customer_id]).to be_an(Integer)
+
+        expect(sub).to have_key(:tea_id)  
+        expect(sub[:tea_id]).to be_an(Integer)
+
+        expect(sub).to have_key(:created_at)
+        expect(sub[:created_at]).to be_a(String)
+
+        expect(sub).to have_key(:updated_at)
+        expect(sub[:updated_at]).to be_a(String)
+
+        expect(sub).to have_key(:deleted_at)
+        expect(sub[:deleted_at]).to be_a_kind_of(String).or be_nil
+        end
+      end
+    end
   end
 end
