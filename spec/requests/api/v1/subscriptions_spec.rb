@@ -55,6 +55,9 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(sub_data[:data][:attributes]).to have_key(:tea_id)
         expect(sub_data[:data][:attributes][:tea_id]).to be_an(Integer)
+
+        expect(sub_data[:data][:attributes]).to have_key(:deleted_at)
+        expect(sub_data[:data][:attributes][:deleted_at]).to be_a(NilClass)
       end
     end
     
