@@ -22,6 +22,11 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
+  def index
+    subscriptions = Subscription.with_deleted.all
+    render json: subscriptions, each_serializer: SubscriptionSerializer
+  end
+
   private
 
   def subscription_params
