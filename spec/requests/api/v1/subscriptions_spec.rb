@@ -131,7 +131,27 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         expect(sub[:updated_at]).to be_a(String)
 
         expect(sub).to have_key(:deleted_at)
-        expect(sub[:deleted_at]).to be_a_kind_of(String).or be_nil
+        expect(sub[:deleted_at]).to be_a(NilClass)
+        end
+      end
+
+      it "return all subscriptions including deleted subscriptions" do
+        subscription = create(:subscription)
+        list = create_list(:subscription, 3)
+        
+        delete "/api/v1/subscriptions/#{subscription.id}"
+
+        
+        
+        get "/api/v1/subscriptions" 
+        subs = JSON.parse(response.body, symbolize_names: true)
+
+        subs.map do |sub|
+
+          expect(sub[:deleted_at]).to be_a_kind_of(String).or be_nil
+          expect(subs[2][:deleted_at]).to be_a(NilClass)
+          expect(subs[3][:deleted_at]).not_to be_nil
+          expect(subs[3][:deleted_at]).to be_a(String)
         end
       end
     end
