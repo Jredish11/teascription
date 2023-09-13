@@ -58,3 +58,4 @@ end
 gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
+gem 'paranoia'

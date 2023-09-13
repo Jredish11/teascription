@@ -41,13 +41,18 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
-          1,
-          1,
+          2,
+          2,
           null,
           0,
           null,
+          null,
+          null,
+          1,
+          2,
+          2,
           null,
           null,
           1,
@@ -66,6 +71,7 @@
       },
       "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/subscription.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -124,6 +130,6 @@
         }
       }
     },
-    "timestamp": 1694559579
+    "timestamp": 1694572299
   }
 }
