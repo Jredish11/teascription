@@ -144,6 +144,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
+    paranoia (2.6.2)
+      activerecord (>= 5.1, < 7.1)
     pg (1.5.4)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -247,6 +249,7 @@ DEPENDENCIES
   faraday
   figaro
   jsonapi-serializer
+  paranoia
   pg (~> 1.1)
   pry
   puma (~> 5.0)
