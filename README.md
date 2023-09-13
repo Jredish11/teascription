@@ -2,9 +2,7 @@
 
 
 
-DB Diagram:
 
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/65009d4f02bd1c4a5e703cdd'> </iframe>
 
 # Teascription
 
@@ -21,11 +19,7 @@ DB Diagram:
 [![MIT License][license-shield]][license-url]
 
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://munch-madness-be-8b56c3719f5f.herokuapp.com/">
-  </a>
+
 
 <h3 align="center">Teascription</h3>
 
@@ -34,6 +28,9 @@ DB Diagram:
     Teascription is a backend API for managing tea subscriptions. Built for the Turing School of Software and Design's Mod 4 Take Home Code.
   </p>
 </div>
+<br>
+
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -118,6 +115,17 @@ Teascription uses these integrations:
 
 ---
 [Back to Top](#readme-top)
+
+# DB Diagram:
+
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/65009d4f02bd1c4a5e703cdd'> </iframe>
+
+<br> 
+
+- One customer can have multiple subscriptions
+- One tea can be associated with multiple subscriptions
+- Many subscriptions can belong to one customer
+- Many subscriptions can be associated with one tea
 
 
 # API JSON Contract
