@@ -11,7 +11,6 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         attrs = {
           title: "Earl Grey",
           price: 5.00,
-          status: "active",
           frequency: "monthly",
           customer_id: customer.id,
           tea_id: tea.id
@@ -47,9 +46,6 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(sub_data[:data][:attributes]).to have_key(:price)
         expect(sub_data[:data][:attributes][:price]).to be_a(Float)
-
-        expect(sub_data[:data][:attributes]).to have_key(:status)
-        expect(sub_data[:data][:attributes][:status]).to be_a(String)
 
         expect(sub_data[:data][:attributes]).to have_key(:frequency)
         expect(sub_data[:data][:attributes][:frequency]).to be_a(String)
@@ -113,9 +109,6 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(sub).to have_key(:price)
         expect(sub[:price]).to be_a(Float)
-
-        expect(sub).to have_key(:status)
-        expect(sub[:status]).to be_a(String)
 
         expect(sub).to have_key(:frequency)
         expect(sub[:frequency]).to be_a(String)
