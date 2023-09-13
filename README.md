@@ -24,5 +24,5 @@ Things you may want to cover:
 * ...
 
 DB Diagram:
-https://dbdiagram.io/d/65009d4f02bd1c4a5e703cdd
+
 <iframe width="560" height="315" src='https://dbdiagram.io/embed/65009d4f02bd1c4a5e703cdd'> </iframe>
