@@ -17,7 +17,9 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
           tea_id: tea.id
         }
 
-        post "/api/v1/subscriptions", params: { subscription: attrs }
+
+        header = { "Content_Type" => "application/json" }
+        post "/api/v1/subscriptions", headers: header, params: { subscription: attrs }
         sub_data = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
