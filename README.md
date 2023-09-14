@@ -80,8 +80,7 @@ Github repositories:
 * [![Rails][Rails]][Rails-url]
 * [![Postgres][Postgres]][Postgres-url]
 * ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-* ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
-
+* [![Github Pages][ghp]][ghp-url]
 
 Teascription uses these integrations:
 
@@ -242,8 +241,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-12T21:31:41.655Z",
         "updated_at": "2023-09-12T21:31:41.655Z",
-        "deleted_at": null,
-        "status": null
+        "deleted_at": null
     },
     {
         "id": 6,
@@ -254,8 +252,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-12T21:31:43.418Z",
         "updated_at": "2023-09-12T21:31:43.418Z",
-        "deleted_at": null,
-        "status": null
+        "deleted_at": null
     },
     {
         "id": 3,
@@ -266,8 +263,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-12T21:29:30.284Z",
         "updated_at": "2023-09-13T02:34:57.462Z",
-        "deleted_at": "2023-09-13T02:34:57.462Z",
-        "status": null
+        "deleted_at": "2023-09-13T02:34:57.462Z"
     },
     {
         "id": 4,
@@ -278,8 +274,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-12T21:31:36.838Z",
         "updated_at": "2023-09-13T02:35:17.260Z",
-        "deleted_at": "2023-09-13T02:35:17.260Z",
-        "status": null
+        "deleted_at": "2023-09-13T02:35:17.260Z"
     },
     {
         "id": 8,
@@ -290,8 +285,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-13T17:36:33.327Z",
         "updated_at": "2023-09-13T17:37:30.704Z",
-        "deleted_at": "2023-09-13T17:37:30.704Z",
-        "status": null
+        "deleted_at": "2023-09-13T17:37:30.704Z"
     },
     {
         "id": 9,
@@ -302,8 +296,7 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-13T20:17:51.893Z",
         "updated_at": "2023-09-13T20:17:51.893Z",
-        "deleted_at": null,
-        "status": null
+        "deleted_at": null
     },
     {
         "id": 10,
@@ -314,8 +307,7 @@ Success Response (200 OK):
         "tea_id": 10,
         "created_at": "2023-09-13T20:21:51.255Z",
         "updated_at": "2023-09-13T20:21:51.255Z",
-        "deleted_at": null,
-        "status": null
+        "deleted_at": null
     },
     {
         "id": 11,
@@ -326,8 +318,40 @@ Success Response (200 OK):
         "tea_id": 3,
         "created_at": "2023-09-13T20:29:43.142Z",
         "updated_at": "2023-09-13T20:47:35.448Z",
-        "deleted_at": "2023-09-13T20:47:35.448Z",
-        "status": null
+        "deleted_at": "2023-09-13T20:47:35.448Z"
+    },
+    {
+        "id": 12,
+        "title": "Earl Grey",
+        "price": 5.0,
+        "frequency": "monthly",
+        "customer_id": 10,
+        "tea_id": 3,
+        "created_at": "2023-09-13T21:58:01.070Z",
+        "updated_at": "2023-09-13T21:58:01.070Z",
+        "deleted_at": null
+    },
+    {
+        "id": 13,
+        "title": "Earl Grey",
+        "price": 5.0,
+        "frequency": "monthly",
+        "customer_id": 10,
+        "tea_id": 3,
+        "created_at": "2023-09-13T21:58:22.597Z",
+        "updated_at": "2023-09-13T21:58:22.597Z",
+        "deleted_at": null
+    },
+    {
+        "id": 14,
+        "title": "Earl Grey",
+        "price": 5.0,
+        "frequency": "monthly",
+        "customer_id": 10,
+        "tea_id": 3,
+        "created_at": "2023-09-13T21:58:26.326Z",
+        "updated_at": "2023-09-13T21:58:26.326Z",
+        "deleted_at": null
     }
 ]
 ```
@@ -364,4 +388,6 @@ Additional features, functionality, and potential refactors:
 [Rails-url]: https://rubyonrails.org/
 [Postgres]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 [Postgres-url]: https://www.postgresql.org/
+[ghp-url]: https://github.com/users/Jredish11/projects/8
+[ghp]: https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white
 
