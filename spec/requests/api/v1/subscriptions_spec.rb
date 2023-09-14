@@ -11,13 +11,14 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         attrs = {
           title: "Earl Grey",
           price: 5.00,
-          status: "active",
           frequency: "monthly",
           customer_id: customer.id,
           tea_id: tea.id
         }
 
-        post "/api/v1/subscriptions", params: { subscription: attrs }
+
+        header = { "Content_Type" => "application/json" }
+        post "/api/v1/subscriptions", headers: header, params: { subscription: attrs }
         sub_data = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
@@ -46,9 +47,6 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
         expect(sub_data[:data][:attributes]).to have_key(:price)
         expect(sub_data[:data][:attributes][:price]).to be_a(Float)
 
-        expect(sub_data[:data][:attributes]).to have_key(:status)
-        expect(sub_data[:data][:attributes][:status]).to be_a(String)
-
         expect(sub_data[:data][:attributes]).to have_key(:frequency)
         expect(sub_data[:data][:attributes][:frequency]).to be_a(String)
 
@@ -57,6 +55,9 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(sub_data[:data][:attributes]).to have_key(:tea_id)
         expect(sub_data[:data][:attributes][:tea_id]).to be_an(Integer)
+
+        expect(sub_data[:data][:attributes]).to have_key(:deleted_at)
+        expect(sub_data[:data][:attributes][:deleted_at]).to be_a(NilClass)
       end
     end
     
@@ -111,9 +112,6 @@ RSpec.describe "Api::V1::Subscriptions", type: :request do
 
         expect(sub).to have_key(:price)
         expect(sub[:price]).to be_a(Float)
-
-        expect(sub).to have_key(:status)
-        expect(sub[:status]).to be_a(String)
 
         expect(sub).to have_key(:frequency)
         expect(sub[:frequency]).to be_a(String)
