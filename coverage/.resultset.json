@@ -16,6 +16,15 @@
           null
         ]
       },
+      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/subscription.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/tea.rb": {
         "lines": [
           1,
@@ -45,6 +54,10 @@
           null,
           2,
           2,
+          2,
+          null,
+          0,
+          null,
           null,
           0,
           null,
@@ -65,15 +78,6 @@
       },
       "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/jeffreyredish/turing/4mod/take_home/teascription/app/models/subscription.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           1,
           null
         ]
@@ -130,6 +134,6 @@
         }
       }
     },
-    "timestamp": 1694572299
+    "timestamp": 1694643787
   }
 }

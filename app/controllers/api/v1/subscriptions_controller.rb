@@ -15,8 +15,12 @@ class Api::V1::SubscriptionsController < ApplicationController
   def destroy
     subscription = Subscription.find(params[:id])
     
-    if subscription.destroy 
-      render json: { message: "Subscription successfully deleted" }, status: 200
+    if subscription
+      if subscription.destroy
+        render json: { message: "Subscription successfully deleted" }, status: 200
+      else
+        render json: { error: "Failed to delete subscription" }, status: :unprocessable_entity
+      end
     else
       render json: { error: "Subscription not found" }, status: 404
     end
@@ -30,6 +34,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:title, :price, :status, :frequency, :customer_id, :tea_id)
+    params.require(:subscription).permit(:title, :price, :frequency, :customer_id, :tea_id)
   end
 end
